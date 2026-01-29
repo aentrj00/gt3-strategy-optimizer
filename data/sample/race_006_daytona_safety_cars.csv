@@ -1,0 +1,7 @@
+start_minute,end_minute,duration_minutes,type,cause,race_id,race_index
+235.1,243.3,8.2,Safety Car,Oil on track,race_006_daytona,6
+776.8,787.7,10.9,Full Course Yellow,Debris on track,race_006_daytona,6
+927.7,936.3,8.6,Full Course Yellow,Debris on track,race_006_daytona,6
+1031.0,1040.9,9.9,Safety Car,Medical,race_006_daytona,6
+1044.8,1051.8,7.0,Safety Car,Barrier repair,race_006_daytona,6
+1106.3,1113.7,7.4,Full Course Yellow,Barrier repair,race_006_daytona,6

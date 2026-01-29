@@ -1,0 +1,2 @@
+circuit,circuit_name,country,duration_hours,track_length_km,num_entries,classes,date,total_laps_leader,race_id,race_index
+laguna_seca,WeatherTech Raceway Laguna Seca,USA,12.0,3.602,32,"LMGT3,LMP2,Hypercar",2026-01-29,579,race_001_laguna_seca,1

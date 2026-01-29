@@ -1,0 +1,318 @@
+# Car Specifications for GT3/GTE Racing
+# Contains manufacturer-specific parameters
+
+cars:
+  # GT3 Cars (2024 homologation)
+  porsche_911_gt3_r:
+    manufacturer: "Porsche"
+    model: "911 GT3 R (992)"
+    class: "GT3"
+    year: 2024
+    engine:
+      type: "Flat-6"
+      displacement: 4.0
+      power_hp: 565
+      torque_nm: 550
+    weight_kg: 1310
+    fuel:
+      capacity_liters: 120
+      consumption_base: 2.8  # liters per lap (varies by circuit)
+      weight_per_liter: 0.75
+    tires:
+      front_width: 300
+      rear_width: 310
+      degradation_factor: 1.0  # baseline
+    aero:
+      downforce_level: "medium"
+      drag_coefficient: 0.34
+    pit_stop:
+      fuel_flow_rate: 2.0  # liters per second
+      tire_change_time: 12  # seconds for 4 tires
+      
+  ferrari_296_gt3:
+    manufacturer: "Ferrari"
+    model: "296 GT3"
+    class: "GT3"
+    year: 2024
+    engine:
+      type: "V6 Twin-Turbo"
+      displacement: 3.0
+      power_hp: 600
+      torque_nm: 560
+    weight_kg: 1295
+    fuel:
+      capacity_liters: 120
+      consumption_base: 2.9
+      weight_per_liter: 0.75
+    tires:
+      front_width: 300
+      rear_width: 310
+      degradation_factor: 1.05
+    aero:
+      downforce_level: "high"
+      drag_coefficient: 0.33
+    pit_stop:
+      fuel_flow_rate: 2.0
+      tire_change_time: 12
+
+  mercedes_amg_gt3:
+    manufacturer: "Mercedes-AMG"
+    model: "GT3 Evo"
+    class: "GT3"
+    year: 2024
+    engine:
+      type: "V8 Twin-Turbo"
+      displacement: 4.0
+      power_hp: 550
+      torque_nm: 650
+    weight_kg: 1350
+    fuel:
+      capacity_liters: 120
+      consumption_base: 3.0
+      weight_per_liter: 0.75
+    tires:
+      front_width: 300
+      rear_width: 310
+      degradation_factor: 0.95
+    aero:
+      downforce_level: "medium"
+      drag_coefficient: 0.35
+    pit_stop:
+      fuel_flow_rate: 2.0
+      tire_change_time: 12
+
+  bmw_m4_gt3:
+    manufacturer: "BMW"
+    model: "M4 GT3"
+    class: "GT3"
+    year: 2024
+    engine:
+      type: "I6 Twin-Turbo"
+      displacement: 3.0
+      power_hp: 590
+      torque_nm: 650
+    weight_kg: 1330
+    fuel:
+      capacity_liters: 120
+      consumption_base: 2.85
+      weight_per_liter: 0.75
+    tires:
+      front_width: 300
+      rear_width: 310
+      degradation_factor: 1.0
+    aero:
+      downforce_level: "medium-high"
+      drag_coefficient: 0.34
+    pit_stop:
+      fuel_flow_rate: 2.0
+      tire_change_time: 12
+
+  aston_martin_vantage_gt3:
+    manufacturer: "Aston Martin"
+    model: "Vantage GT3"
+    class: "GT3"
+    year: 2024
+    engine:
+      type: "V8 Twin-Turbo"
+      displacement: 4.0
+      power_hp: 535
+      torque_nm: 700
+    weight_kg: 1340
+    fuel:
+      capacity_liters: 120
+      consumption_base: 3.1
+      weight_per_liter: 0.75
+    tires:
+      front_width: 300
+      rear_width: 310
+      degradation_factor: 0.98
+    aero:
+      downforce_level: "medium"
+      drag_coefficient: 0.36
+    pit_stop:
+      fuel_flow_rate: 2.0
+      tire_change_time: 12
+
+  lamborghini_huracan_gt3:
+    manufacturer: "Lamborghini"
+    model: "Huracán GT3 EVO2"
+    class: "GT3"
+    year: 2024
+    engine:
+      type: "V10"
+      displacement: 5.2
+      power_hp: 585
+      torque_nm: 560
+    weight_kg: 1320
+    fuel:
+      capacity_liters: 120
+      consumption_base: 3.2
+      weight_per_liter: 0.75
+    tires:
+      front_width: 300
+      rear_width: 310
+      degradation_factor: 1.02
+    aero:
+      downforce_level: "high"
+      drag_coefficient: 0.33
+    pit_stop:
+      fuel_flow_rate: 2.0
+      tire_change_time: 12
+
+  audi_r8_lms_gt3:
+    manufacturer: "Audi"
+    model: "R8 LMS GT3 EVO II"
+    class: "GT3"
+    year: 2024
+    engine:
+      type: "V10"
+      displacement: 5.2
+      power_hp: 585
+      torque_nm: 550
+    weight_kg: 1315
+    fuel:
+      capacity_liters: 120
+      consumption_base: 3.15
+      weight_per_liter: 0.75
+    tires:
+      front_width: 300
+      rear_width: 310
+      degradation_factor: 1.0
+    aero:
+      downforce_level: "medium-high"
+      drag_coefficient: 0.34
+    pit_stop:
+      fuel_flow_rate: 2.0
+      tire_change_time: 12
+
+  mclaren_720s_gt3:
+    manufacturer: "McLaren"
+    model: "720S GT3 Evo"
+    class: "GT3"
+    year: 2024
+    engine:
+      type: "V8 Twin-Turbo"
+      displacement: 4.0
+      power_hp: 560
+      torque_nm: 620
+    weight_kg: 1285
+    fuel:
+      capacity_liters: 120
+      consumption_base: 2.95
+      weight_per_liter: 0.75
+    tires:
+      front_width: 300
+      rear_width: 310
+      degradation_factor: 1.03
+    aero:
+      downforce_level: "high"
+      drag_coefficient: 0.32
+    pit_stop:
+      fuel_flow_rate: 2.0
+      tire_change_time: 12
+
+  lexus_rc_f_gt3:
+    manufacturer: "Lexus"
+    model: "RC F GT3"
+    class: "GT3"
+    year: 2024
+    engine:
+      type: "V8"
+      displacement: 5.0
+      power_hp: 540
+      torque_nm: 520
+    weight_kg: 1320
+    fuel:
+      capacity_liters: 120
+      consumption_base: 3.05
+      weight_per_liter: 0.75
+    tires:
+      front_width: 300
+      rear_width: 310
+      degradation_factor: 0.97
+    aero:
+      downforce_level: "medium"
+      drag_coefficient: 0.35
+    pit_stop:
+      fuel_flow_rate: 2.0
+      tire_change_time: 12
+
+  nissan_z_gt500:
+    manufacturer: "Nissan"
+    model: "Z NISMO GT3"
+    class: "GT3"
+    year: 2024
+    engine:
+      type: "V6 Twin-Turbo"
+      displacement: 3.0
+      power_hp: 550
+      torque_nm: 600
+    weight_kg: 1300
+    fuel:
+      capacity_liters: 120
+      consumption_base: 2.75
+      weight_per_liter: 0.75
+    tires:
+      front_width: 300
+      rear_width: 310
+      degradation_factor: 1.0
+    aero:
+      downforce_level: "medium"
+      drag_coefficient: 0.34
+    pit_stop:
+      fuel_flow_rate: 2.0
+      tire_change_time: 12
+
+# Tire Compounds
+tire_compounds:
+  soft:
+    grip_multiplier: 1.05
+    degradation_rate: 0.08  # % per lap
+    optimal_temp_range: [85, 100]  # Celsius
+    cliff_threshold: 0.70  # Performance drops sharply below this
+    
+  medium:
+    grip_multiplier: 1.00
+    degradation_rate: 0.05
+    optimal_temp_range: [80, 95]
+    cliff_threshold: 0.65
+    
+  hard:
+    grip_multiplier: 0.97
+    degradation_rate: 0.03
+    optimal_temp_range: [75, 90]
+    cliff_threshold: 0.60
+    
+  wet:
+    grip_multiplier: 0.85  # On wet track vs dry
+    degradation_rate: 0.02
+    optimal_temp_range: [60, 80]
+    cliff_threshold: 0.50
+    
+  intermediate:
+    grip_multiplier: 0.92
+    degradation_rate: 0.04
+    optimal_temp_range: [65, 85]
+    cliff_threshold: 0.55
+
+# Weather Impact
+weather_conditions:
+  dry:
+    grip_modifier: 1.0
+    fuel_modifier: 1.0
+    tire_wear_modifier: 1.0
+    
+  damp:
+    grip_modifier: 0.90
+    fuel_modifier: 1.02
+    tire_wear_modifier: 0.85
+    
+  wet:
+    grip_modifier: 0.75
+    fuel_modifier: 1.05
+    tire_wear_modifier: 0.70
+    
+  heavy_rain:
+    grip_modifier: 0.60
+    fuel_modifier: 1.08
+    tire_wear_modifier: 0.60

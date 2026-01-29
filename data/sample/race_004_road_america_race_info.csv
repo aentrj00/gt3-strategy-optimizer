@@ -1,0 +1,2 @@
+circuit,circuit_name,country,duration_hours,track_length_km,num_entries,classes,date,total_laps_leader,race_id,race_index
+road_america,Road America,USA,8.0,6.515,26,"LMGT3,LMP2,Hypercar",2026-01-29,253,race_004_road_america,4

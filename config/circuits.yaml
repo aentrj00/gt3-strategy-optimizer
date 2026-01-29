@@ -1,0 +1,223 @@
+# Circuit Configurations for GT3/GTE Racing
+# Contains track-specific parameters for strategy calculations
+
+circuits:
+  # WEC Circuits
+  le_mans:
+    name: "Circuit de la Sarthe"
+    country: "France"
+    length_km: 13.626
+    lap_time_gt3_avg: 234  # seconds
+    fuel_consumption_avg: 4.8  # liters per lap
+    tire_wear: "low"  # low, medium, high
+    safety_car_probability: 0.15  # per hour
+    pit_lane_time: 45  # seconds (entry to exit at pit speed)
+    sectors: 3
+    drs_zones: 0
+    elevation_change: 30  # meters
+    
+  spa:
+    name: "Circuit de Spa-Francorchamps"
+    country: "Belgium"
+    length_km: 7.004
+    lap_time_gt3_avg: 138
+    fuel_consumption_avg: 3.2
+    tire_wear: "high"
+    safety_car_probability: 0.20
+    pit_lane_time: 38
+    sectors: 3
+    elevation_change: 102
+
+  monza:
+    name: "Autodromo Nazionale Monza"
+    country: "Italy"
+    length_km: 5.793
+    lap_time_gt3_avg: 108
+    fuel_consumption_avg: 2.6
+    tire_wear: "low"
+    safety_car_probability: 0.12
+    pit_lane_time: 32
+    sectors: 3
+    elevation_change: 11
+
+  nurburgring:
+    name: "Nürburgring GP"
+    country: "Germany"
+    length_km: 5.148
+    lap_time_gt3_avg: 98
+    fuel_consumption_avg: 2.4
+    tire_wear: "medium"
+    safety_car_probability: 0.18
+    pit_lane_time: 30
+    sectors: 3
+    elevation_change: 55
+
+  portimao:
+    name: "Autódromo Internacional do Algarve"
+    country: "Portugal"
+    length_km: 4.653
+    lap_time_gt3_avg: 95
+    fuel_consumption_avg: 2.3
+    tire_wear: "medium"
+    safety_car_probability: 0.14
+    pit_lane_time: 28
+    sectors: 3
+    elevation_change: 60
+
+  bahrain:
+    name: "Bahrain International Circuit"
+    country: "Bahrain"
+    length_km: 5.412
+    lap_time_gt3_avg: 105
+    fuel_consumption_avg: 2.5
+    tire_wear: "high"
+    safety_car_probability: 0.10
+    pit_lane_time: 30
+    sectors: 3
+    elevation_change: 12
+
+  fuji:
+    name: "Fuji Speedway"
+    country: "Japan"
+    length_km: 4.563
+    lap_time_gt3_avg: 92
+    fuel_consumption_avg: 2.2
+    tire_wear: "medium"
+    safety_car_probability: 0.16
+    pit_lane_time: 28
+    sectors: 3
+    elevation_change: 35
+
+  cota:
+    name: "Circuit of the Americas"
+    country: "USA"
+    length_km: 5.513
+    lap_time_gt3_avg: 110
+    fuel_consumption_avg: 2.7
+    tire_wear: "medium"
+    safety_car_probability: 0.15
+    pit_lane_time: 32
+    sectors: 3
+    elevation_change: 41
+
+  # IMSA Circuits
+  daytona:
+    name: "Daytona International Speedway"
+    country: "USA"
+    length_km: 5.729
+    lap_time_gt3_avg: 102
+    fuel_consumption_avg: 2.5
+    tire_wear: "medium"
+    safety_car_probability: 0.25  # High due to banking
+    pit_lane_time: 35
+    sectors: 3
+    elevation_change: 10
+
+  sebring:
+    name: "Sebring International Raceway"
+    country: "USA"
+    length_km: 6.019
+    lap_time_gt3_avg: 115
+    fuel_consumption_avg: 2.8
+    tire_wear: "high"  # Very abrasive surface
+    safety_car_probability: 0.22
+    pit_lane_time: 36
+    sectors: 3
+    elevation_change: 8
+
+  watkins_glen:
+    name: "Watkins Glen International"
+    country: "USA"
+    length_km: 5.472
+    lap_time_gt3_avg: 98
+    fuel_consumption_avg: 2.4
+    tire_wear: "medium"
+    safety_car_probability: 0.18
+    pit_lane_time: 30
+    sectors: 3
+    elevation_change: 54
+
+  road_america:
+    name: "Road America"
+    country: "USA"
+    length_km: 6.515
+    lap_time_gt3_avg: 122
+    fuel_consumption_avg: 3.0
+    tire_wear: "medium"
+    safety_car_probability: 0.16
+    pit_lane_time: 38
+    sectors: 3
+    elevation_change: 55
+
+  laguna_seca:
+    name: "WeatherTech Raceway Laguna Seca"
+    country: "USA"
+    length_km: 3.602
+    lap_time_gt3_avg: 82
+    fuel_consumption_avg: 2.0
+    tire_wear: "high"
+    safety_car_probability: 0.20
+    pit_lane_time: 26
+    sectors: 3
+    elevation_change: 55
+
+  # GT World Challenge Circuits
+  brands_hatch:
+    name: "Brands Hatch GP"
+    country: "UK"
+    length_km: 3.916
+    lap_time_gt3_avg: 78
+    fuel_consumption_avg: 1.9
+    tire_wear: "medium"
+    safety_car_probability: 0.22
+    pit_lane_time: 25
+    sectors: 3
+    elevation_change: 40
+
+  misano:
+    name: "Misano World Circuit"
+    country: "Italy"
+    length_km: 4.226
+    lap_time_gt3_avg: 85
+    fuel_consumption_avg: 2.0
+    tire_wear: "medium"
+    safety_car_probability: 0.15
+    pit_lane_time: 28
+    sectors: 3
+    elevation_change: 10
+
+  paul_ricard:
+    name: "Circuit Paul Ricard"
+    country: "France"
+    length_km: 5.842
+    lap_time_gt3_avg: 105
+    fuel_consumption_avg: 2.5
+    tire_wear: "high"
+    safety_car_probability: 0.08  # Large runoffs
+    pit_lane_time: 34
+    sectors: 3
+    elevation_change: 35
+
+  zandvoort:
+    name: "Circuit Zandvoort"
+    country: "Netherlands"
+    length_km: 4.259
+    lap_time_gt3_avg: 88
+    fuel_consumption_avg: 2.1
+    tire_wear: "high"
+    safety_car_probability: 0.24
+    pit_lane_time: 28
+    sectors: 3
+    elevation_change: 18
+
+  barcelona:
+    name: "Circuit de Barcelona-Catalunya"
+    country: "Spain"
+    length_km: 4.657
+    lap_time_gt3_avg: 92
+    fuel_consumption_avg: 2.2
+    tire_wear: "high"
+    safety_car_probability: 0.14
+    pit_lane_time: 30
+    sectors: 3
+    elevation_change: 30

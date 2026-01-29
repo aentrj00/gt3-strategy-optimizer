@@ -1,0 +1,7 @@
+start_minute,end_minute,duration_minutes,type,cause,race_id,race_index
+12.9,19.1,6.2,Safety Car,Barrier repair,race_010_sebring,10
+207.8,212.9,5.2,Full Course Yellow,Medical,race_010_sebring,10
+415.8,430.6,14.8,Safety Car,Medical,race_010_sebring,10
+436.3,447.9,11.7,Safety Car,Crash,race_010_sebring,10
+521.7,536.4,14.7,Full Course Yellow,Mechanical failure,race_010_sebring,10
+640.7,646.1,5.4,Full Course Yellow,Medical,race_010_sebring,10

@@ -1,0 +1,4 @@
+start_minute,end_minute,duration_minutes,type,cause,race_id,race_index
+87.6,96.5,9.0,Safety Car,Mechanical failure,race_004_road_america,4
+107.6,120.1,12.5,Safety Car,Spin,race_004_road_america,4
+332.8,340.4,7.6,Full Course Yellow,Mechanical failure,race_004_road_america,4

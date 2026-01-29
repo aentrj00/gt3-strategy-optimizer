@@ -1,0 +1,2 @@
+circuit,circuit_name,country,duration_hours,track_length_km,num_entries,classes,date,total_laps_leader,race_id,race_index
+le_mans,Circuit de la Sarthe,France,6.0,13.626,36,"LMGT3,LMP2,Hypercar",2026-01-29,93,race_003_le_mans,3

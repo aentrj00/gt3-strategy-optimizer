@@ -1,0 +1,6 @@
+start_minute,end_minute,duration_minutes,type,cause,race_id,race_index
+255.2,269.8,14.7,Full Course Yellow,Crash,race_005_watkins_glen,5
+323.5,333.9,10.4,Safety Car,Mechanical failure,race_005_watkins_glen,5
+442.7,454.7,12.0,Safety Car,Barrier repair,race_005_watkins_glen,5
+503.9,509.1,5.2,Safety Car,Debris on track,race_005_watkins_glen,5
+519.6,529.9,10.3,Full Course Yellow,Barrier repair,race_005_watkins_glen,5
