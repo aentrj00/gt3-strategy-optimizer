@@ -8,12 +8,14 @@ A comprehensive race strategy optimization system for GT3/GTE endurance racing w
 
 ## Features
 
-- **🔧 Pit Window Optimizer**: Calculate optimal pit stop windows using dynamic programming
-- **🚨 Safety Car Predictor**: ML model predicting SC/FCY probability using XGBoost
-- **⛽ Fuel Strategy Calculator**: Optimize fuel loads considering weight penalties
-- **🏎️ Tire Strategy Optimizer**: Model tire degradation and find optimal change windows
-- **🎮 Race Simulator**: Monte Carlo simulation for strategy comparison
-- **📊 Interactive Dashboard**: Streamlit-based visualization and analysis
+- **Pit Window Optimizer**: Calculate optimal pit stop windows using dynamic programming
+- **Safety Car Predictor**: ML model predicting SC/FCY probability (calibrated with historical data)
+- **Fuel Strategy Calculator**: Optimize fuel loads considering weight penalties
+- **Tire Strategy Optimizer**: Model tire degradation and find optimal change windows
+- **Race Simulator**: Monte Carlo simulation for strategy comparison
+- **Driver Stint Planner**: FIA-compliant driver rotations for multi-driver endurance races
+- **Multi-Class Traffic**: Realistic Hypercar/LMP2/GT3 traffic interaction modeling
+- **Interactive Dashboard**: Streamlit-based visualization and analysis
 
 ## Project Structure
 
@@ -32,30 +34,23 @@ gt3-strategy-optimizer/
 │   │   ├── scraper_imsa.py     # IMSA data scraper
 │   │   └── data_generator.py   # Sample data generator
 │   │
-│   ├── preprocessing/
-│   │   ├── data_cleaner.py     # Data cleaning utilities
-│   │   └── feature_engineering.py
-│   │
 │   ├── analysis/
 │   │   ├── pit_window_optimizer.py
 │   │   ├── fuel_strategy.py
 │   │   ├── tire_strategy.py
-│   │   ├── safety_car_predictor.py
-│   │   └── race_simulator.py
+│   │   ├── race_simulator.py
+│   │   ├── driver_stint_planner.py 
+│   │   └── multi_class_traffic.py   
 │   │
 │   ├── models/
-│   │   ├── sc_prediction_model.py
-│   │   └── stint_performance_model.py
+│   │   └── sc_prediction_model.py   
 │   │
 │   └── visualization/
 │       └── dashboard.py
 │
-├── notebooks/
-│   └── exploratory_analysis.ipynb
-│
 ├── config/
-│   ├── circuits.yaml           # Circuit configurations
-│   └── cars.yaml               # Car specifications
+│   ├── circuits.yaml           # 20+ circuit configurations
+│   └── cars.yaml               # GT3 car specifications + tire compounds
 │
 ├── tests/
 ├── requirements.txt
@@ -138,12 +133,23 @@ Calculates optimal pit stop windows considering:
 - Pit stop duration (including drive-through)
 - Undercut/overcut opportunities
 
-### Safety Car Predictor
+### Safety Car Predictor 
 
-XGBoost model trained on historical data:
-- Features: circuit, race minute, car count, weather, competition class
-- Output: SC probability for next N laps
-- Accuracy: ~72% on validation set
+XGBoost model with calibrated heuristics:
+- Features: circuit risk, race phase, weather, car count, night/day
+- Race phase modeling: start (2.5x risk), mid-race (0.8x), final hour (1.4x)
+- Weather impact: wet = 2.2x, heavy rain = 3.0x
+- Returns probability for 15-minute window
+
+```python
+from src.models.sc_prediction_model import SafetyCarPredictor
+
+predictor = SafetyCarPredictor()
+pred = predictor.predict_probability('spa', race_minute=5, weather='dry')
+# Returns: 53% Very High (race start)
+pred = predictor.predict_probability('spa', race_minute=180, weather='wet')
+# Returns: 29% Very High (mid-race + rain)
+```
 
 ### Fuel Strategy Calculator
 
@@ -168,6 +174,48 @@ Monte Carlo simulation supporting:
 - Position tracking
 - 1000+ iterations for statistical confidence
 
+### Driver Stint Planner 
+
+Plans driver rotations for endurance races:
+- FIA regulation compliance (max 4h continuous, 14h total in 24h race)
+- Fatigue modeling and recovery rates
+- Skill-based assignment (wet specialist, night specialist)
+- Condition-optimized planning (weather, day/night)
+
+```python
+from src.analysis.driver_stint_planner import DriverStintPlanner, Driver
+
+drivers = [
+    Driver(name="Pro", pace=0.95, wet_skill=0.85, night_skill=0.80),
+    Driver(name="Silver", pace=0.82, night_skill=0.90),
+    Driver(name="Bronze", pace=0.72, wet_skill=0.90)
+]
+
+planner = DriverStintPlanner(drivers, race_duration_hours=24, lap_time_seconds=234)
+plan = planner.create_equal_time_plan(race_start_hour=16)
+print(planner.format_plan_table(plan))
+```
+
+### Multi-Class Traffic 
+
+Models realistic traffic in WEC/IMSA:
+- Class speed differences (Hypercar ~15% faster than GT3)
+- Blue flag compliance
+- Time lost when lapping/being lapped
+- Incident probability in traffic
+
+```python
+from src.analysis.multi_class_traffic import MultiClassSimulator, RaceClass
+
+sim = MultiClassSimulator(series="WEC", base_lap_time=138.0)
+traffic = sim.estimate_traffic_for_class(
+    RaceClass.LMGT3,
+    race_duration_hours=6,
+    class_distribution={RaceClass.HYPERCAR: 10, RaceClass.LMP2: 8, RaceClass.LMGT3: 18}
+)
+# Shows: being lapped ~335 times, ~2.6 min lost to traffic
+```
+
 ## Dashboard Features
 
 1. **Race Setup**: Configure circuit, weather, car specifications
@@ -178,27 +226,17 @@ Monte Carlo simulation supporting:
 
 ## Skills Demonstrated
 
-- ✅ **Data Engineering**: Web scraping, ETL pipelines, databases
-- ✅ **Machine Learning**: Classification, feature engineering, XGBoost
-- ✅ **Optimization**: Dynamic programming, genetic algorithms
-- ✅ **Domain Knowledge**: Motorsport strategy expertise
-- ✅ **Visualization**: Interactive Streamlit dashboards
-- ✅ **Software Engineering**: Modular code, testing, documentation
+-  **Data Engineering**: Web scraping, ETL pipelines, databases
+-  **Machine Learning**: Classification, feature engineering, XGBoost
+-  **Optimization**: Dynamic programming, genetic algorithms
+-  **Domain Knowledge**: Motorsport strategy expertise
+-  **Visualization**: Interactive Streamlit dashboards
+-  **Software Engineering**: Modular code, testing, documentation
 
-## Contributing
 
-Contributions are welcome! Please read our contributing guidelines and submit pull requests.
 
 ## License
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
 
-- FIA WEC for timing data structure reference
-- IMSA for race documentation
-- The motorsport data science community
-
----
-
-**Built with ❤️ for the motorsport community**

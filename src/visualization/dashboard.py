@@ -67,12 +67,12 @@ def main():
     """Main dashboard function."""
     
     # Header
-    st.markdown('<p class="main-header">🏁 GT3/GTE Race Strategy Optimizer</p>', unsafe_allow_html=True)
+    st.markdown('<p class="main-header">GT3/GTE Race Strategy Optimizer</p>', unsafe_allow_html=True)
     st.markdown('<p class="sub-header">Professional race strategy analysis with ML-powered predictions</p>', unsafe_allow_html=True)
     
     # Sidebar - Race Setup
     with st.sidebar:
-        st.header("⚙️ Race Setup")
+        st.header("Race Setup")
         
         circuit = st.selectbox(
             "Circuit",
@@ -126,7 +126,7 @@ def main():
         calculated_lap_time = int(gt3_reference * class_multiplier)
         
         # Show reference info
-        st.caption(f"📊 **{circuit.replace('_', ' ').title()} Reference Times:**")
+        st.caption(f"**{circuit.replace('_', ' ').title()} Reference Times:**")
         col_ref1, col_ref2 = st.columns(2)
         with col_ref1:
             st.caption(f"GT3: {gt3_reference}s")
@@ -140,7 +140,7 @@ def main():
         
         if use_auto_laptime:
             lap_time = calculated_lap_time
-            st.info(f"🎯 Auto: **{lap_time}s** ({car_class})")
+            st.info(f"Auto: **{lap_time}s** ({car_class})")
         else:
             lap_time = st.number_input(
                 "Custom Lap Time (s)",
@@ -170,7 +170,7 @@ def main():
         
         if use_auto_fuel:
             fuel_consumption = calculated_fuel
-            st.caption(f"⛽ Auto: **{fuel_consumption} L/lap**")
+            st.caption(f"Auto: **{fuel_consumption} L/lap**")
         else:
             fuel_consumption = st.number_input(
                 "Custom Fuel Consumption (L/lap)",
@@ -210,11 +210,11 @@ def main():
     
     # Main content tabs
     tab1, tab2, tab3, tab4, tab5 = st.tabs([
-        "📊 Strategy Comparison",
-        "🚨 Safety Car Analysis",
-        "⛽ Fuel Strategy",
-        "🏎️ Tire Strategy",
-        "🎮 Race Simulation"
+        "Strategy Comparison",
+        "Safety Car Analysis",
+        "Fuel Strategy",
+        "Tire Strategy",
+        "Race Simulation"
     ])
     
     # Tab 1: Strategy Comparison
@@ -347,10 +347,10 @@ def main():
                 f"{prediction['probability']:.1%}"
             )
         with col2:
-            risk_colors = {'Low': '🟢', 'Medium': '🟡', 'High': '🟠', 'Very High': '🔴'}
+            risk_colors = {'Low': 'Low', 'Medium': 'Medium', 'High': 'High', 'Very High': 'Very High'}
             st.metric(
                 "Risk Level",
-                f"{risk_colors.get(prediction['risk_level'], '⚪')} {prediction['risk_level']}"
+                f"{risk_colors.get(prediction['risk_level'], 'Unknown')} {prediction['risk_level']}"
             )
         with col3:
             st.info(prediction['recommendation'])
@@ -630,7 +630,7 @@ def main():
             name_2 = st.text_input("Name", f"{stops_2}-Stop Aggressive", key='name2')
         
         with col2:
-            if st.button("🎮 Run Simulation", type="primary"):
+            if st.button("Run Simulation", type="primary"):
                 with st.spinner(f"Running {num_simulations} simulations..."):
                     # Initialize simulator
                     simulator = RaceSimulator(
@@ -704,7 +704,7 @@ def main():
     st.divider()
     st.markdown("""
     <div style='text-align: center; color: #6B7280; padding: 1rem;'>
-        <p>GT3/GTE Race Strategy Optimizer | Built with ❤️ for the motorsport community</p>
+        <p>GT3/GTE Race Strategy Optimizer | Built for the motorsport community</p>
         <p>Data sources: WEC, IMSA, GT World Challenge</p>
     </div>
     """, unsafe_allow_html=True)
