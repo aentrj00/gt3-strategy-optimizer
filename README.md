@@ -224,14 +224,7 @@ traffic = sim.estimate_traffic_for_class(
 4. **Tire & Fuel Strategy**: Degradation curves and consumption
 5. **Race Simulation**: Interactive Monte Carlo results
 
-## Skills Demonstrated
 
--  **Data Engineering**: Web scraping, ETL pipelines, databases
--  **Machine Learning**: Classification, feature engineering, XGBoost
--  **Optimization**: Dynamic programming, genetic algorithms
--  **Domain Knowledge**: Motorsport strategy expertise
--  **Visualization**: Interactive Streamlit dashboards
--  **Software Engineering**: Modular code, testing, documentation
 
 
 
